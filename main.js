@@ -1188,23 +1188,23 @@ async function main() {
 
         if (activeKeys.includes("ArrowUp")) {
             if (shiftKey) {
-                inv = translate4(inv, 0, -0.03, 0);
+                inv = translate4(inv, 0, -0.01, 0);
             } else {
                 inv = translate4(inv, 0, 0, 0.1);
             }
         }
         if (activeKeys.includes("ArrowDown")) {
             if (shiftKey) {
-                inv = translate4(inv, 0, 0.03, 0);
+                inv = translate4(inv, 0, 0.01, 0);
             } else {
                 inv = translate4(inv, 0, 0, -0.1);
             }
         }
         if (activeKeys.includes("ArrowLeft"))
-            inv = translate4(inv, -0.03, 0, 0);
+            inv = translate4(inv, -0.01, 0, 0);
         //
         if (activeKeys.includes("ArrowRight"))
-            inv = translate4(inv, 0.03, 0, 0);
+            inv = translate4(inv, 0.01, 0, 0);
         // inv = rotate4(inv, 0.01, 0, 1, 0);
         if (activeKeys.includes("KeyA")) inv = rotate4(inv, -0.01, 0, 1, 0);
         if (activeKeys.includes("KeyD")) inv = rotate4(inv, 0.01, 0, 1, 0);
@@ -1327,7 +1327,7 @@ async function main() {
         }
 
         viewMatrix = invert4(inv);
-
+        /*
         if (carousel) {
             let inv = invert4(defaultViewMatrix);
 
@@ -1336,7 +1336,7 @@ async function main() {
             inv = rotate4(inv, -0.6 * t, 0, 1, 0);
 
             viewMatrix = invert4(inv);
-        }
+        }*/
 
         if (isJumping) {
             jumpDelta = Math.min(1, jumpDelta + 0.05);
