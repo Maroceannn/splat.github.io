@@ -1344,6 +1344,16 @@ async function main() {
             jumpDelta = Math.max(0, jumpDelta - 0.05);
         }
 
+        let camPosition = [inv[12], inv[13], inv[14]]; // 相机在世界坐标系中的位置
+        let distance = Math.sqrt(camPosition[0] ** 2 + camPosition[1] ** 2 + camPosition[2] ** 2);
+        if (distance > 5) {
+            let scale = 5 / distance;
+            inv[12] *= scale;
+            inv[13] *= scale;
+            inv[14] *= scale;
+            viewMatrix = invert4(inv);
+        }
+
         let inv2 = invert4(viewMatrix);
         inv2 = translate4(inv2, 0, -jumpDelta, 0);
         inv2 = rotate4(inv2, -0.1 * jumpDelta, 1, 0, 0);
