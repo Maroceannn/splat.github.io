@@ -1190,14 +1190,14 @@ async function main() {
             if (shiftKey) {
                 inv = translate4(inv, 0, -0.01, 0);
             } else {
-                inv = translate4(inv, 0, 0, 0.1);
+                inv = translate4(inv, 0, 0, 0.01);
             }
         }
         if (activeKeys.includes("ArrowDown")) {
             if (shiftKey) {
                 inv = translate4(inv, 0, 0.01, 0);
             } else {
-                inv = translate4(inv, 0, 0, -0.1);
+                inv = translate4(inv, 0, 0, -0.01);
             }
         }
         if (activeKeys.includes("ArrowLeft"))
